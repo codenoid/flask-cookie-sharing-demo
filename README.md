@@ -12,7 +12,8 @@ pip3 install flask redis --user
 ## Usage
 
 ```
-python3 app.py
+python3 app.py &
+python3 shared.py &
 # running
 ```
 
@@ -23,6 +24,8 @@ python3 app.py
 
 ## Proof on cookie sharing
 
-1. deploy this web in different **port**, node or server
-2. use nginx reverse proxy to bind this web on same domain
-3. 
+1. run both `app.py` and `shared.py`
+2. access `localhost:3002` to ensure you aren't logged in
+3. access `locahost:3001` to login
+4. after logged in, try to access `localhost:3002` again
+5. the page should return "SUKSES LOGIN!"
